@@ -1697,11 +1697,11 @@
  * probe points will follow. This prevents any change from causing
  * the probe to be unable to reach any points.
  */
-#if PROBE_SELECTED && !IS_KINEMATIC
-  //#define PROBING_MARGIN_LEFT PROBING_MARGIN
-  //#define PROBING_MARGIN_RIGHT PROBING_MARGIN
-  //#define PROBING_MARGIN_FRONT PROBING_MARGIN
-  //#define PROBING_MARGIN_BACK PROBING_MARGIN
+#if PROBE_SELECTED && !IS_KINEMATIC                 //damit wir nicht in die Klammper vom Glasbett fahren hier nich mal einen offset
+  //#define PROBING_MARGIN_LEFT PROBING_MARGIN +40
+  #define PROBING_MARGIN_RIGHT PROBING_MARGIN + 5
+  #define PROBING_MARGIN_FRONT PROBING_MARGIN + 40
+  #define PROBING_MARGIN_BACK PROBING_MARGIN + 20
 #endif
 
 #if EITHER(MESH_BED_LEVELING, AUTO_BED_LEVELING_UBL)
